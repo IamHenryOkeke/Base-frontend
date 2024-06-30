@@ -7,7 +7,7 @@ export default function DashboardLayout() {
 
   if (location.pathname === "/dashboard/invoice/create") {
     return (
-      <div className="bg-[#F6F6F6] h-screen flex items-center justify-center">
+      <div className="bg-[#F6F6F6] py-20">
         <Outlet />
       </div>
     )
