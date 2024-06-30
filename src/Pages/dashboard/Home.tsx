@@ -84,7 +84,7 @@ function ReferralCard({ id, amount }: { id: string, amount: number }) {
 function TransactionCard({ id, amount, transactionStatus }: { id: string, amount: number, transactionStatus: 'successful' | 'pending'}) {
   const formattedAmount = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(amount));
   return (
-    <div className="flex justify-between items-center">
+    <div id={id} className="flex justify-between items-center">
       <div className="flex items-center gap-2">
         <div className={`h-14 w-14 p-2 rounded-full ${transactionStatus === 'successful' ? 'bg-[#6472F1]' : 'bg-[#D196FF]'} flex items-center justify-center`}>
           <div className={`${transactionStatus === 'successful' ? 'bg-primaryColor' : 'bg-[#9A35EA]'} h-8 w-8 flex items-center justify-center rounded-lg`}>
