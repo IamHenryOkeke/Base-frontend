@@ -14,7 +14,7 @@ export default function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/dashboard");
+    if (isAuthenticated) navigate("/dashboard/home");
   }, [isAuthenticated, navigate]);
 
   return (
