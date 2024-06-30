@@ -14,6 +14,8 @@ import Notifications from "./Pages/dashboard/Notifications";
 import Transactions from "./Pages/dashboard/Transactions";
 import Cards from "./Pages/dashboard/Cards";
 import Fund from "./Pages/dashboard/Fund";
+import CreateInvoice from "./Pages/dashboard/Create-Invoice";
+import InvoiceLayout from "./Layouts/InvoiceLayout";
 
 const config = createConfig({
   chains: [mainnet],
@@ -50,6 +52,20 @@ export default function App() {
           )
         },
         {
+          path: "invoice",
+          element: (
+            <InvoiceLayout />
+          ),
+          children: [
+            {
+              path: "create",
+              element: (
+                <CreateInvoice />
+              )
+            },
+          ]
+        },
+        {
           path: "cards-and-receipts",
           element: (
             <Cards />
@@ -69,7 +85,7 @@ export default function App() {
         },
         {
           path: "settings",
-          children:[
+          children: [
             {
               path: "profile",
               element: (

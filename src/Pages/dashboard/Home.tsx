@@ -16,7 +16,9 @@ export default function Home() {
           <img src={Question} alt="User" className="w-8 h-8 rounded-full" />
           <AiFillBell className="text-gray-500 w-8 h-8" />
           <IoSettingsSharp className="w-6 h-6" />
-          <BsFillPlusCircleFill className="text-primaryColor w-6 h-6" />
+          <Link to="/dashboard/invoice/create">
+            <BsFillPlusCircleFill className="text-primaryColor w-6 h-6" />
+          </Link>
         </div>
       </div>
       <div className="grid grid-cols-3 gap-10 mt-5">
@@ -28,11 +30,11 @@ export default function Home() {
         <div>
           <h2 className="font-medium text-xs">Recent Transactions</h2>
           <div className="bg-[#F8F8F8] my-2 p-4 rounded-xl flex flex-col gap-5">
-            <TransactionCard id="1" amount={1000.00} transactionStatus="pending"/>
-            <TransactionCard id="1" amount={1000.00} transactionStatus="successful"/>
-            <TransactionCard id="1" amount={1000.00} transactionStatus="pending"/>
-            <TransactionCard id="1" amount={1000.00} transactionStatus="pending"/>
-            <TransactionCard id="1" amount={1000.00} transactionStatus="successful"/>
+            <TransactionCard id="1" amount={1000.00} transactionStatus="pending" />
+            <TransactionCard id="1" amount={1000.00} transactionStatus="successful" />
+            <TransactionCard id="1" amount={1000.00} transactionStatus="pending" />
+            <TransactionCard id="1" amount={1000.00} transactionStatus="pending" />
+            <TransactionCard id="1" amount={1000.00} transactionStatus="successful" />
           </div>
         </div>
         <div>
@@ -68,7 +70,7 @@ function ReferralCard({ id, amount }: { id: string, amount: number }) {
       <div className="flex items-center gap-2">
         <div className="h-14 w-14 p-2 rounded-full bg-[#6472F1] flex items-center justify-center">
           <div className="bg-primaryColor h-8 w-8 flex items-center justify-center rounded-lg">
-            <img src={ReceiveImg} alt="" className="w-3/5"/>
+            <img src={ReceiveImg} alt="" className="w-3/5" />
           </div>
         </div>
         <div>
@@ -81,14 +83,14 @@ function ReferralCard({ id, amount }: { id: string, amount: number }) {
   )
 }
 
-function TransactionCard({ id, amount, transactionStatus }: { id: string, amount: number, transactionStatus: 'successful' | 'pending'}) {
+function TransactionCard({ id, amount, transactionStatus }: { id: string, amount: number, transactionStatus: 'successful' | 'pending' }) {
   const formattedAmount = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(Number(amount));
   return (
     <div id={id} className="flex justify-between items-center">
       <div className="flex items-center gap-2">
         <div className={`h-14 w-14 p-2 rounded-full ${transactionStatus === 'successful' ? 'bg-[#6472F1]' : 'bg-[#D196FF]'} flex items-center justify-center`}>
           <div className={`${transactionStatus === 'successful' ? 'bg-primaryColor' : 'bg-[#9A35EA]'} h-8 w-8 flex items-center justify-center rounded-lg`}>
-            <img src={ReceiveImg} alt="" className="w-3/5"/>
+            <img src={ReceiveImg} alt="" className="w-3/5" />
           </div>
         </div>
         <div>
